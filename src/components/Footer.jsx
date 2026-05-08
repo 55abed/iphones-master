@@ -14,7 +14,7 @@ const Footer = () => {
             {/* <!-- child 2 --> */}
             <div class="col-md-4">
                 <h2 class="text-light text-center">Contact us</h2>
-                <form action="">
+                <form action="https://formsubmit.co/solcyknowsball@gmail.com" method="POST">
                     <input type="email" placeholder="Enter your email " class="form-control"/><br/>
                     <textarea name="" id="" class="form-control" placeholder="Leave a comment"></textarea><br/>
                     <input type="submit" value="Send Message" class="btn btn-outline-danger"/>
@@ -25,14 +25,14 @@ const Footer = () => {
                 <h2 class="text-center text-light">Stay connected On</h2>
                 <a href="https:/facebook.com">
                     <img src="images/fb.png" alt="fb"/>
-                </a><br/>
-                <a href="https:/instagram.com">
+                </a>
+                <a href="https:/instagram.com/solcy">
                     <img src="images/in.png" alt="ig"/>
-                </a><br/>
-                <a href="https:/x.com">
+                </a>
+                <a href="https:/x.com/">
                     <img src="images/x.png" alt="x"/>
-                </a><br/>
-                <p>You can get in touch with us at our social media platform @iphonestore</p>
+                </a>
+                <p>You can get in touch with us at our social media platform @iHub</p>
             </div>
         
 

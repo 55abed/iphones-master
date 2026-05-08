@@ -1,47 +1,78 @@
 import React, { useEffect, useState } from 'react'
+
 const Navbar = () => {
-const [user, setUser] = useState(null);
-useEffect(()=>{
-    const loggedUser=JSON.parse(localStorage.getitem("user"));   setUser(loggedUser)
-},[]);
-const logout=()=>{
-    localStorage.removeItem("user");
-    setUser(null)
-}
- 
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        const loggedUser = JSON.parse(localStorage.getItem("user"))
+        setUser(loggedUser)
+    }, [])
+
+    const logout = () => {
+        localStorage.removeItem("user")
+        setUser(null)
+    }
 
     return (
-        <section class="row">
-            <div class="col-md-12">
-                {/* <!-- a nav with navbar content  --> */}
-                <nav class="navbar navbar-expand-md bg-dark">
-                    {/* <img src="images/logo.jpg" alt="" style={{ height: 50, width: 40 ,objectFit:"fill" }} /> */}
-                    <a href="home" class=" navbar-brand text-danger">Iphones</a>
-                    <button class="navbar-toggler" data-bs-target="#navbarcollapse" data-bs-toggle="collapse">
-                        <span class="nav-link">welcome{user.name}</span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarcollapse">
-                        <div class="navbar-nav">
-                            <a href="/home" class="nav-link text-light">Home</a>
-                            <a href="/addproducts" class="nav-link text-light">Add products</a>
-                            {user ? (
-                                <>
-                                    <span class="nav-link">welcome{user.name}</span>
-                                    <button onClick={logout} className='btn btn-danger'>logout</button>
-                                </>
-                            ) : (
-                                <>
-                                    <a href="/signin" class="nav-link text-light">sign in</a>
-                                    <a href="/signup" class="nav-link text-light ">sign up</a>
-                                </>
-                            )}
-                            {/* <!-- a division containg the links --> */}
+        <section className="row">
+            <div className="col-md-12">
 
+                <nav className="navbar navbar-expand-md bg-dark px-4 py-3">
 
+                    {/* Logo */}
+                    <a href="/home" className="navbar-brand text-danger fw-bold fs-3">
+                        iHub
+                    </a>
 
-                        </div>
+                    {/* Nav Links */}
+                    <div className="d-flex align-items-center gap-4">
+
+                        <a href="/home" className="nav-link text-light">
+                            Home
+                        </a>
+
+                        <a href="/addproducts" className="nav-link text-light">
+                            Add products
+                        </a>
+
+                        <a href="/cart" className="nav-link text-light">
+                            Cart 🛒
+                        </a>
+
                     </div>
+
+                    {/* Right Side */}
+                    <div className="ms-auto d-flex align-items-center gap-3">
+
+                        {user ? (
+                            <>
+                                <span className="text-light">
+                                    Welcome {user.username}
+                                </span>
+
+                                <button
+                                    onClick={logout}
+                                    className="btn btn-danger btn-sm"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <a href="/signin" className="nav-link text-light">
+                                    Sign in
+                                </a>
+
+                                <a href="/signup" className="nav-link text-light">
+                                    Sign up
+                                </a>
+                            </>
+                        )}
+
+                    </div>
+
                 </nav>
+
             </div>
         </section>
     )

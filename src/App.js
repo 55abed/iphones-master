@@ -8,6 +8,7 @@ import Signin from './components/Signin';
 import Addproducts from './components/Addproducts';
 import Getproducts from './components/Getproducts';
 import Mpesapayment from './components/Mpesapayment';
+import Cart from "./components/Cart";
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 function App() {
@@ -17,7 +18,7 @@ function App() {
         {/* navbar goes here  */}
         <Navbar />
         <header className="App-header">
-         <div className='scroll-text'>Welcome to iphones </div>
+         <div >Welcome to iHub </div>
         </header>
         <nav>
 
@@ -35,9 +36,12 @@ function App() {
           <Route path="/home" element={<Getproducts />} />
           <Route path="/addproducts" element={<Addproducts />} />
           <Route path="/makepayment" element={<Mpesapayment />} />
+          <Route path="/cart" element={<Cart />} />
 
         </Routes>
       </div >
+      
+
     </BrowserRouter>
   );
 }
